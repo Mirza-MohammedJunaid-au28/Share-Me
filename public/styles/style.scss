@@ -1,0 +1,343 @@
+@import url("https://fonts.googleapis.com/css2?family=Arima+Madurai:wght@400;700&family=Mochiy+Pop+One&display=swap");
+
+/* 
+font-family: 'Arima Madurai', cursive;
+font-family: 'Mochiy Pop One', sans-serif;
+ */
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+$bgcolor1: #e3fdfd;
+$bgcolor2: #cbf1f5;
+$bgcolor3: #a6e3e9;
+$bgcolor4: #71c9ce;
+
+$color1: #3282b8;
+
+@mixin btn() {
+  font-family: "Arima", cursive;
+  text-decoration: none;
+  font-weight: 600;
+  color: $color1;
+  margin-right: 30px;
+  padding-bottom: 5px;
+}
+
+body {
+  background: linear-gradient(
+    to bottom,
+    $bgcolor1,
+    $bgcolor2,
+    $bgcolor3,
+    $bgcolor4
+  );
+}
+
+#nav-section {
+  height: 10vh;
+  display: flex;
+  align-items: center;
+
+  #nav-btns {
+    margin-left: auto;
+    margin-right: 25px;
+
+    .btn {
+      font-size: 1.2rem;
+      @include btn();
+    }
+
+    .btn:hover {
+      transition: all 0.2s ease-in;
+      border-bottom: 2px solid $color1;
+    }
+  }
+}
+
+#nav-heading {
+  padding: 10px 0 0 20px;
+  font-family: "Mochiy Pop One", sans-serif;
+  color: $color1;
+  font-size: 2.5rem;
+  letter-spacing: 2px;
+}
+
+#heading {
+  font-family: "Mochiy Pop One", sans-serif;
+  color: $color1;
+  font-size: 2.5rem;
+  letter-spacing: 2px;
+}
+
+#sub-heading {
+  font-family: "Mochiy Pop One", sans-serif;
+  color: $color1;
+  font-size: 2.5rem;
+  letter-spacing: 2px;
+}
+
+#main-section {
+  font-family: "Arima", cursive;
+  min-height: 90vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#home-content-box {
+  text-align: center;
+}
+
+#file-gif {
+  position: absolute;
+  left: -100px;
+  top: 70px;
+  height: 80px;
+  // animation: 12s slide-right ; // infinite
+}
+
+#clicked {
+  height: 300px;
+  width: 300px;
+}
+
+#redirect-btns {
+  margin-top: 20px;
+}
+
+#redirect-btns > a {
+  text-decoration: none;
+  background-color: $color1;
+  color: #fff;
+  padding: 8px 18px;
+  font-size: 1.2rem;
+  border-radius: 6px;
+}
+
+#signup-section {
+  font-family: "Arima", cursive;
+  min-height: 90vh;
+  max-width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.form-error {
+  color: red;
+  text-align: center;
+  margin: 10px 0;
+}
+
+#signup-form {
+  margin-top: 10px;
+}
+
+#signup-form > div {
+  margin-top: 15px;
+}
+
+.labels {
+  font-size: 1.3rem;
+}
+
+.inputs {
+  font-size: 1.1rem;
+  padding: 5px 5px;
+  letter-spacing: 1px;
+  height: 30px;
+  width: 300px;
+  outline: none;
+  border-radius: 5px;
+  border: none;
+}
+
+#signup-submit ,
+#login-submit {
+  border: none;
+  background: $bgcolor2;
+  color: $color1;
+  padding: 8px 18px;
+  font-size: 1rem;
+  border-radius: 6px;
+  display: block;
+  margin: auto;
+  margin-top: 20px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+#verification {
+  height: 200px;
+  width: 500px;
+  background: #fff;
+  border-radius: 8px;
+  position: absolute;
+  z-index: 999;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#verification > #close{
+  font-family: "Arima", cursive;
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+#verification > h3 {
+  font-family: "Arima", cursive;
+  color: $color1;
+}
+
+#verification > a {
+  @include btn();
+  color: #000;
+  font-size: 1.5rem;
+  margin-right: 0;
+  margin-top: 20px;
+}
+
+#verification > a:hover {
+  transition: all 0.2s ease-in;
+  border-bottom: 2px solid $color1;
+}
+
+
+
+
+#login-section {
+  font-family: "Arima", cursive;
+  height: 90vh;
+  max-width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@keyframes slide-right {
+  from {
+    margin-left: 0;
+  }
+  to {
+    left: 100vw;
+  }
+}
+
+.drag-area {
+  border: 2px dashed #fff;
+  height: 300px;
+  width: 500px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.drag-area.active {
+  border: 2px solid #fff;
+}
+
+.drag-area .icon {
+  font-size: 50px;
+  color: $color1;
+}
+
+.drag-area header {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #fff;
+  color: $color1;
+}
+
+.drag-area span {
+  color: $color1;
+  font-size: 25px;
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin: 10px 0 15px 0;
+}
+
+.drag-area button {
+  font-family: "Arima", cursive;
+  color: $color1;
+  padding: 10px 25px;
+  font-size: 20px;
+  font-weight: 600;
+  border: none;
+  outline: none;
+  background: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.drag-area button:hover {
+  transition: all 0.3s ease-in;
+  background: $color1;
+  color: #fff;
+}
+
+.drag-area img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+
+@media only screen and (max-width: 600px){
+  
+  #nav-heading{
+    font-size: 1.5rem;
+  }
+
+  #nav-section {
+    #nav-btns {
+      margin-left: auto;
+      margin-right: 10px;
+      position: relative;
+      top: 10px;
+  
+      .btn {
+        font-size: 1rem;
+        @include btn();
+        margin-right: 20px;
+      }
+  
+      .btn:hover {
+        transition: all 0.2s ease-in;
+        border-bottom: 2px solid $color1;
+      }
+    }
+  }
+
+}

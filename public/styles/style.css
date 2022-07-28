@@ -1,0 +1,373 @@
+@import url("https://fonts.googleapis.com/css2?family=Arima+Madurai:wght@400;700&family=Mochiy+Pop+One&display=swap");
+/* 
+font-family: 'Arima Madurai', cursive;
+font-family: 'Mochiy Pop One', sans-serif;
+ */
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background: -webkit-gradient(linear, left top, left bottom, from(#e3fdfd), color-stop(#cbf1f5), color-stop(#a6e3e9), to(#71c9ce));
+  background: linear-gradient(to bottom, #e3fdfd, #cbf1f5, #a6e3e9, #71c9ce);
+}
+
+#nav-section {
+  height: 10vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#nav-section #nav-btns {
+  margin-left: auto;
+  margin-right: 25px;
+}
+
+#nav-section #nav-btns .btn {
+  font-size: 1.2rem;
+  font-family: "Arima", cursive;
+  text-decoration: none;
+  font-weight: 600;
+  color: #3282b8;
+  margin-right: 30px;
+  padding-bottom: 5px;
+}
+
+#nav-section #nav-btns .btn:hover {
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+  border-bottom: 2px solid #3282b8;
+}
+
+#nav-heading {
+  padding: 10px 0 0 20px;
+  font-family: "Mochiy Pop One", sans-serif;
+  color: #3282b8;
+  font-size: 2.5rem;
+  letter-spacing: 2px;
+}
+
+#heading {
+  font-family: "Mochiy Pop One", sans-serif;
+  color: #3282b8;
+  font-size: 2.5rem;
+  letter-spacing: 2px;
+}
+
+#sub-heading {
+  font-family: "Mochiy Pop One", sans-serif;
+  color: #3282b8;
+  font-size: 2.5rem;
+  letter-spacing: 2px;
+}
+
+#main-section {
+  font-family: "Arima", cursive;
+  min-height: 90vh;
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#home-content-box {
+  text-align: center;
+}
+
+#file-gif {
+  position: absolute;
+  left: -100px;
+  top: 70px;
+  height: 80px;
+}
+
+#clicked {
+  height: 300px;
+  width: 300px;
+}
+
+#redirect-btns {
+  margin-top: 20px;
+}
+
+#redirect-btns > a {
+  text-decoration: none;
+  background-color: #3282b8;
+  color: #fff;
+  padding: 8px 18px;
+  font-size: 1.2rem;
+  border-radius: 6px;
+}
+
+#signup-section {
+  font-family: "Arima", cursive;
+  min-height: 90vh;
+  max-width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.form-error {
+  color: red;
+  text-align: center;
+  margin: 10px 0;
+}
+
+#signup-form {
+  margin-top: 10px;
+}
+
+#signup-form > div {
+  margin-top: 15px;
+}
+
+.labels {
+  font-size: 1.3rem;
+}
+
+.inputs {
+  font-size: 1.1rem;
+  padding: 5px 5px;
+  letter-spacing: 1px;
+  height: 30px;
+  width: 300px;
+  outline: none;
+  border-radius: 5px;
+  border: none;
+}
+
+#signup-submit,
+#login-submit {
+  border: none;
+  background: #cbf1f5;
+  color: #3282b8;
+  padding: 8px 18px;
+  font-size: 1rem;
+  border-radius: 6px;
+  display: block;
+  margin: auto;
+  margin-top: 20px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+#verification {
+  height: 200px;
+  width: 500px;
+  background: #fff;
+  border-radius: 8px;
+  position: absolute;
+  z-index: 999;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#verification > #close {
+  font-family: "Arima", cursive;
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+#verification > h3 {
+  font-family: "Arima", cursive;
+  color: #3282b8;
+}
+
+#verification > a {
+  font-family: "Arima", cursive;
+  text-decoration: none;
+  font-weight: 600;
+  color: #3282b8;
+  margin-right: 30px;
+  padding-bottom: 5px;
+  color: #000;
+  font-size: 1.5rem;
+  margin-right: 0;
+  margin-top: 20px;
+}
+
+#verification > a:hover {
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+  border-bottom: 2px solid #3282b8;
+}
+
+#login-section {
+  font-family: "Arima", cursive;
+  height: 90vh;
+  max-width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+@-webkit-keyframes slide-right {
+  from {
+    margin-left: 0;
+  }
+  to {
+    left: 100vw;
+  }
+}
+
+@keyframes slide-right {
+  from {
+    margin-left: 0;
+  }
+  to {
+    left: 100vw;
+  }
+}
+
+.drag-area {
+  border: 2px dashed #fff;
+  height: 300px;
+  width: 500px;
+  border-radius: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.drag-area.active {
+  border: 2px solid #fff;
+}
+
+.drag-area .icon {
+  font-size: 50px;
+  color: #3282b8;
+}
+
+.drag-area header {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #fff;
+  color: #3282b8;
+}
+
+.drag-area span {
+  color: #3282b8;
+  font-size: 25px;
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin: 10px 0 15px 0;
+}
+
+.drag-area button {
+  font-family: "Arima", cursive;
+  color: #3282b8;
+  padding: 10px 25px;
+  font-size: 20px;
+  font-weight: 600;
+  border: none;
+  outline: none;
+  background: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.drag-area button:hover {
+  -webkit-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+  background: #3282b8;
+  color: #fff;
+}
+
+.drag-area img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 5px;
+}
+
+@media only screen and (max-width: 600px) {
+  #nav-heading {
+    font-size: 1.5rem;
+  }
+  #nav-section #nav-btns {
+    margin-left: auto;
+    margin-right: 10px;
+    position: relative;
+    top: 10px;
+  }
+  #nav-section #nav-btns .btn {
+    font-size: 1rem;
+    font-family: "Arima", cursive;
+    text-decoration: none;
+    font-weight: 600;
+    color: #3282b8;
+    margin-right: 30px;
+    padding-bottom: 5px;
+    margin-right: 20px;
+  }
+  #nav-section #nav-btns .btn:hover {
+    -webkit-transition: all 0.2s ease-in;
+    transition: all 0.2s ease-in;
+    border-bottom: 2px solid #3282b8;
+  }
+}
+/*# sourceMappingURL=style.css.map */

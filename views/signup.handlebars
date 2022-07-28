@@ -1,0 +1,45 @@
+<nav>
+    <section id="nav-section">
+        <h1 id="nav-heading">File Share</h1>
+        <div id="nav-btns">
+            <a href="/signup" class="btn">Signup</a>
+            <a href="/login" class="btn">Login</a>
+        </div>
+    </section>
+</nav>
+<main>
+    <section id="signup-section">
+        <lord-icon src="https://cdn.lordicon.com/vusrdugn.json" trigger="loop" delay="5000"
+            colors="primary:#121331,secondary:#b26836,tertiary:#3282b8,quaternary:#f9c9c0,quinary:#ebe6ef"
+            style="width:250px;height:250px">
+        </lord-icon>
+
+        <h3 id="sub-heading">Signup</h3>
+
+        <div class="form-error">
+
+        </div>
+
+        <form action="/signup" method="POST" id="signup-form" >
+            <div class="name-inp">
+                <label class="labels" for="name">Name :</label><br>
+                <input class="inputs" type="text" name="name" id="name">
+            </div>
+            <div class="email-inp">
+                <label class="labels" for="email">Email :</label><br>
+                <input class="inputs" type="text" name="email" id="email">
+            </div>
+            <div class="password-inp">
+                <labe class="labels" for="password">Password :</label><br>
+                <input class="inputs" type="text" name="password" id="password">
+            </div>
+            <button type="button" id="signup-submit">Submit</button>
+        </form>
+    </section>
+    <div id="verification" style="display: none;">
+        <span id="close">X</span>
+         <h3>Verificaton Email is sent , Plzz Check your Email</h3>
+        <a href="https://mail.google.com/mail/u/0/#inbox" target="_blank">Check</a>
+    </div>
+</main>
+<script src="js/signup.js"></script>

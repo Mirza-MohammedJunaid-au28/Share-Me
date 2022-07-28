@@ -1,0 +1,35 @@
+<nav>
+    <section id="nav-section">
+        <h1 id="nav-heading">File Share</h1>
+        <div id="nav-btns">
+            <a href="/signup" class="btn">Signup</a>
+            <a href="/login" class="btn">Login</a>
+        </div>
+    </section>
+</nav>
+<main>
+    <section id="login-section">
+        <lord-icon src="https://cdn.lordicon.com/nrzqxhfu.json" trigger="loop" delay="5000"
+            colors="primary:#000000,secondary:#3282b8" stroke="70" style="width:250px;height:250px">
+        </lord-icon>
+
+        <h3 id="sub-heading">Login</h3>
+
+        <div class="form-error">
+
+        </div>
+
+        <form action="/login" method="POST" id="signup-form">
+            <div class="email-inp">
+                <label class="labels" for="email">Email :</label><br>
+                <input class="inputs" type="text" name="email" id="email">
+            </div>
+            <div class="password-inp">
+                <labe class="labels" for="password">Password :</label><br>
+                    <input class="inputs" type="text" name="password" id="password">
+            </div>
+            <button type="submit" id="login-submit">Submit</button>
+        </form>
+    </section>
+</main>
+<script src="js/login.js"></script>
