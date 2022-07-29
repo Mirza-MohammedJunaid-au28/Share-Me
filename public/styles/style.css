@@ -71,7 +71,7 @@ body {
 #main-section {
   font-family: "Arima", cursive;
   min-height: 90vh;
-  width: 100vw;
+  max-width: 100vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -92,6 +92,8 @@ body {
   left: -100px;
   top: 70px;
   height: 80px;
+  -webkit-animation: 12s slide-right infinite;
+          animation: 12s slide-right infinite;
 }
 
 #clicked {
@@ -254,12 +256,149 @@ body {
           flex-direction: column;
 }
 
+#dashboard-main-section {
+  font-family: "Arima", cursive;
+  min-height: 90vh;
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 100px;
+}
+
+#left-section {
+  padding-right: 50px;
+  border-right: 2px solid #71c9ce;
+}
+
+#download-link {
+  height: 40px;
+  width: 400px;
+  outline: none;
+  padding-left: 5px;
+  font-size: 1.2rem;
+  border-radius: 8px;
+  border: none;
+}
+
+#download-btn,
+#browse-btn {
+  font-family: "Arima", cursive;
+  text-decoration: none;
+  font-weight: 600;
+  color: #3282b8;
+  margin-right: 30px;
+  padding-bottom: 5px;
+  padding: 8px 15px;
+  font-size: 1.2rem;
+  border: none;
+  background: #e3fdfd;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+#browse-btn {
+  margin-top: 10px;
+  margin-left: 30px;
+}
+
+#name-head {
+  font-family: "Arima", cursive;
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: #3282b8;
+  margin-right: 20px;
+}
+
+#upload-btn {
+  font-family: "Arima", cursive;
+  text-decoration: none;
+  font-weight: 600;
+  color: #3282b8;
+  margin-right: 30px;
+  padding-bottom: 5px;
+  padding: 8px 15px;
+  font-size: 1.2rem;
+  border: none;
+  background: #e3fdfd;
+  border-radius: 8px;
+  cursor: pointer;
+  display: block;
+  margin: auto;
+  margin-top: 20px;
+}
+
+#error-main-section {
+  font-family: "Arima", cursive;
+  min-height: 90vh;
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#upload-file {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#file-upload-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 250px;
+  width: 400px;
+  border: 2px dashed #3282b8;
+}
+
+.fa-cloud-upload-alt {
+  font-size: 5rem;
+  color: #3282b8;
+}
+
 @-webkit-keyframes slide-right {
   from {
     margin-left: 0;
   }
   to {
-    left: 100vw;
+    padding-left: 100vw;
   }
 }
 
@@ -268,7 +407,7 @@ body {
     margin-left: 0;
   }
   to {
-    left: 100vw;
+    padding-left: 100vw;
   }
 }
 

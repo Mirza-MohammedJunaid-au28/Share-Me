@@ -1,33 +1,41 @@
 const connection = require("../db/db");
-
 const jwt = require('jsonwebtoken')
 
+// Rendering Login Page
 function renderLogin(req,res){
     res.render('login');
 }
 
+// Checking User Details & Redirecting to Dashboard
 function login(req,res){
+    
     const data = req.body;
     const param = [data.email]
+    
+    // Finding Email in Databsae
     connection.query('select * from users where email = ?',param,(error,result) => {
         
         if(error){
-            return res.status(500).send(error)
+            return res.render('error',{
+                status : 500,
+                msg : error
+            })
         }
 
         if(result.length < 1){
-            return res.status(404).send({
-                msg : "User Not Found" ,
-                error : true
+            return res.render('error',{
+                status : 404,
+                msg : "User Not Found"
             })
         }
         
+
+        // If All Details are Correct 
         if(result[0].email == data.email && result[0].password == data.password){
             
             const payload = {
                 "name" : result[0].name,
-                "email" : result[0].email,
-                "login" : true
+                "email" : result[0].email
             }
 
             const token = jwt.sign(payload,process.env.JWTKEY,{expiresIn : '30d'})
@@ -40,57 +48,13 @@ function login(req,res){
         }
 
         else if(result[0].email == data.email && result[0].password != data.password){
-            return res.status(401).send({
+            return res.render('error',{
+                status : 401,
                 msg : "Invalid Credentials",
-                error : true
             })
         }
 
     })
 }
-/* function login(req,res){
-    const data = req.body;
-    const param = [data.email]
-    connection.query('select * from users where email = ?',param,(error,result) => {
-        
-        if(error){
-            return res.status(500).send(error)
-        }
-
-        if(result.length < 1){
-            return res.status(404).send({
-                msg : "User Not Found" ,
-                error : true
-            })
-        }
-        
-        if(result[0].email == data.email && result[0].password == data.password){
-
-            console.log(result);
-
-            const payload = {
-                "name" : result[0].name,
-                "email" : result[0].email,
-                "login" : true
-            }
-
-            const token = jwt.sign(payload,process.env.JWTKEY,{expiresIn : '30d'})
-
-            return res.status(200).send({
-                token : token,
-                msg : "Aunthenticated" ,
-                error : false
-            })
-        }
-
-        else if(result[0].email == data.email && result[0].password != data.password){
-            return res.status(401).send({
-                msg : "Invalid Credentials",
-                error : true
-            })
-        }
-
-    })
-} */
 
 module.exports = {renderLogin , login};

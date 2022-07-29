@@ -2,18 +2,34 @@
     <section id="nav-section">
         <h1 id="nav-heading">File Share</h1>
         <div id="nav-btns">
+            <span id="name-head">
+                <lord-icon src="https://cdn.lordicon.com/vusrdugn.json" trigger="loop" delay="5000"
+                    style="width:50px;height:50px">
+                </lord-icon>{{name}}
+            </span>
             <a href="/logout" class="btn">Logout</a>
         </div>
     </section>
 </nav>
 <main>
-    <section id="main-section">
-        <div class="drag-area">
-            <div class="icon"><i class="fas fa-cloud-upload-alt"></i></div>
-            <header>Drag & Drop to Upload File</header>
-            <span>OR</span>
-            <button>Browse File</button>
-            <input type="file" hidden>
+    <section id="dashboard-main-section">
+        <div id="left-section">
+            <form method="post" action="/fileupload" id="upload-file" encType="multipart/form-data">
+                <div id="file-upload-section">
+                    <div class="icon"><i class="fas fa-cloud-upload-alt"></i></div>
+                    {{!-- <button>Browse File</button>
+                    <input name="file" type="file"> --}}
+                    <input id="btn" type="file" name="file" style="display:none;">
+                    <input type="button" id="browse-btn" onclick="document.getElementById('btn').click();" value="Browse File" />
+                </div>
+                <button type="submit" id="upload-btn">Upload</button>
+            </form>
+        </div>
+        <div id="right-section">
+            <form id="download-section">
+                <input type="text" id="download-link">
+                <button type="submit" id="download-btn">Download</button>
+            </form>
         </div>
     </section>
 </main>

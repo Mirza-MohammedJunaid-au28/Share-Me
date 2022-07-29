@@ -17,6 +17,7 @@ email.addEventListener("change", emailvalidate);
 password.addEventListener("change", passwordvalidate);
 submitBtn.addEventListener("click", checkall);
 
+// Name Validation
 function namevalidate() {
   if (namee.value.length < 5) {
     error.innerText = "Name length should be greater than 5";
@@ -26,6 +27,7 @@ function namevalidate() {
   }
 }
 
+// Password Validation
 function passwordvalidate() {
   let isUpper = false;
   let isLower = false;
@@ -70,6 +72,8 @@ function passwordvalidate() {
   }
 }
 
+
+// Email Validation
 function emailvalidate() {
   const emailVal = email.value;
   var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
@@ -82,6 +86,7 @@ function emailvalidate() {
   }
 }
 
+// Verification
 function checkall() {
   if (((isName == isPassword) == isEmail) == true) {
     const name = namee.value;
@@ -92,6 +97,8 @@ function checkall() {
       email: emaill,
       password: passwordd,
     };
+
+    // Check if User Exists
     fetch("/checkUser", {
       method: "POST",
       body: JSON.stringify(data),
@@ -104,41 +111,32 @@ function checkall() {
         email.value = "";
         password.value = "";
         verificationWindow.style.display = "flex";
-        localStorage.setItem("email", emaill);
 
+        // Sending Verfication Mail
         fetch("/verifyEmail", {
             method: "POST",
-            body: JSON.stringify({name,emmail : emaill,passwordd}),
+            body: JSON.stringify({name,email : emaill,password : passwordd}),
             headers: {
               "Content-Type": "application/json",
-            },
+            }, 
         })        
 
         .then(res => res.json())
         .then(data => {
-            console.log(data);
+          const inFifteenMinutes = new Date(new Date().getTime() + 15 * 60 * 1000);
+          document.cookie = `Temptoken=${data.token}; expires = ${inFifteenMinutes} )`;
         })
 
       } else if (data.status == 409) {
-        window.location.href = "/userExists";
+        error.innerHTML = 'User Exists , Try to Login'
       } else if (data.status == 500) {
-        window.location.href = "/something";
+        error.innerHTML = 'Something Went Wrong'
       } else {
         throw new Error(data.statusText);
       }
     });
   }
 }
-
-/* function validateEmail(email){
-    fetch("/validateEmail", {
-        method: "POST",
-        body: JSON.stringify(data),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      })
-} */
 
 closeBtn.addEventListener("click", () => {
   verificationWindow.style.display = "none";
