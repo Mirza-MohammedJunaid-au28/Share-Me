@@ -1,0 +1,35 @@
+<nav>
+    <section id="nav-section">
+        <h1 id="nav-heading">File Share</h1>
+        <div id="nav-btns">
+            <span id="name-head">
+                <lord-icon src="https://cdn.lordicon.com/vusrdugn.json" trigger="loop" delay="5000"
+                    style="width:50px;height:50px">
+                </lord-icon>{{name}}
+            </span>
+            <a href="/dashboard" class="btn">dashboard</a>
+            <a href="/logout" class="btn">Logout</a>
+        </div>
+    </section>
+</nav>
+<section id="dashboard-main-section">
+    <div id="left-section">
+    <h1 id="heading" style="text-align: center;">File Key</h1>
+    <input type="text" id="key-input" value="{{randomKey}}"><i class="fa-solid fa-clipboard" id="copy-btn"></i>
+</div>
+ <div id="right-section">
+    <form>
+
+    <h1 id="send-mail-heading">Send Mail</h1>
+
+    <label for="email" id="email-label">Receiver's Email :</label>
+    <input type="text" name="email" id="key-email">
+    <br>
+
+    <button id="key-send-btn">Send</button>
+    </form>
+
+
+ </div>
+</main>
+<script src="js/key.js"></script>

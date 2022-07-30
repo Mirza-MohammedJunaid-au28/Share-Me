@@ -1,0 +1,27 @@
+Node JS :
+fs
+for loops
+object handling
+callback
+promise
+async , await
+mongodb
+axios
+jwt
+class
+session
+
+Express JS :
+middlewear
+api methods
+all types inputs handling
+Folder Structure
+
+Projects :
+to do
+curd operations
+file manipulation
+3rd party api calls
+
+
+

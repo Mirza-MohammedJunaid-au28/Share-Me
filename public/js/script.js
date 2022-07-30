@@ -1,65 +1,39 @@
-/* const dropArea = document.querySelector(".drag-area"),
-dragText = dropArea.querySelector("header"),
-button = dropArea.querySelector("button"),
-input = dropArea.querySelector("input");
-const uploadBtn = document.querySelector("#upload-btn")
+const downloadBtn = document.getElementById("download-btn");
+const downloadLink = document.getElementById("download-link");
+const downloadForm = document.getElementById("download-form");
+const downloadURL = document.getElementById("download-url");
+const closeBtn = document.getElementById("close");
 
-let file; 
+downloadBtn.addEventListener("click", downloadFile);
 
-button.onclick = ()=>{
-  input.click();
+function downloadFile() {
+  const link = downloadLink.value;
+  const data = {
+    link
+  };
+
+  fetch("/download", {
+    method: "POST",
+    body: JSON.stringify(data),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  })
+
+  .then(data => data.json())
+  .then(res =>{
+    const filepath = '../../uploads/'+res.filename
+    console.log(filepath);
+    downloadURL.href = filepath;
+    downloadForm.style.display = "block";
+    window.stop();
+  })
 }
 
-input.addEventListener("change", function(){
-  file = this.files[0];
-  dropArea.classList.add("active");
-  showFile();
-});
+closeBtn.addEventListener("click", () => {
+  downloadForm.style.display = "none";
+})
 
-
-dropArea.addEventListener("dragover", (event)=>{
-  event.preventDefault(); 
-  dropArea.classList.add("active");
-  dragText.textContent = "Release to Upload File";
-});
-
-dropArea.addEventListener("dragleave", ()=>{
-  dropArea.classList.remove("active");
-  dragText.textContent = "Drag & Drop to Upload File";
-});
-
-
-dropArea.addEventListener("drop", (event)=>{
-  event.preventDefault(); 
-  file = event.dataTransfer.files[0];
-  showFile();
-});
-
-function showFile(){
-  uploadBtn.style.display = 'block';
-  let fileType = file.type; 
-  let validExtensions = ["image/jpeg", "image/jpg", "image/png","application/pdf","video/mp4"]; 
-  if(validExtensions.includes(fileType)){ 
-    let fileReader = new FileReader(); 
-    fileReader.onload = ()=>{
-      let fileURL = fileReader.result;
-      if((fileType == "image/jpeg") || (fileType == "image/png") || (fileType == "image/jpg")){
-        let Tag = `<img src="${fileURL}" alt="image">`;
-        dropArea.innerHTML = Tag;
-      }
-      else if(fileType == "video/mp4"){
-        let Tag = `<video src="${fileURL}" alt="video"></video>`;
-        dropArea.innerHTML = Tag;
-      }
-      else if(fileType == "application/pdf"){
-        let Tag = `<img src="../assets/pdf.png" alt="image">`;
-        dropArea.innerHTML = Tag;
-      }
-    }
-    fileReader.readAsDataURL(file);
-  }else{
-    alert("!!! This File Format Not Supported !!!");
-    dropArea.classList.remove("active");
-    dragText.textContent = "Drag & Drop to Upload File";
-  }
-} */
+downloadURL.addEventListener('click', () => {
+  downloadLink.value = ""
+})

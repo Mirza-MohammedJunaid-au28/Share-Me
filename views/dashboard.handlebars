@@ -14,7 +14,7 @@
 <main>
     <section id="dashboard-main-section">
         <div id="left-section">
-            <form method="post" action="/fileupload" id="upload-file" encType="multipart/form-data">
+            <form method="post" action="/dashboard" id="upload-file" encType="multipart/form-data">
                 <div id="file-upload-section">
                     <div class="icon"><i class="fas fa-cloud-upload-alt"></i></div>
                     {{!-- <button>Browse File</button>
@@ -28,9 +28,15 @@
         <div id="right-section">
             <form id="download-section">
                 <input type="text" id="download-link">
-                <button type="submit" id="download-btn">Download</button>
+                <button id="download-btn">Download</button>
             </form>
         </div>
     </section>
+    <div id="download-form" style="display: none;" >
+        <span id="close">X</span>
+         <h3 id="heading">Download File</h3>
+        <a id="download-url" download>Download</a>
+    </div>
 </main>
+
 <script src="js/script.js"></script>

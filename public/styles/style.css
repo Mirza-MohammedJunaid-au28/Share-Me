@@ -204,7 +204,7 @@ body {
           flex-direction: column;
 }
 
-#verification > #close {
+#close {
   font-family: "Arima", cursive;
   position: absolute;
   right: 20px;
@@ -393,6 +393,111 @@ body {
   color: #3282b8;
 }
 
+#download-form {
+  height: 200px;
+  width: 500px;
+  background: #fff;
+  border-radius: 8px;
+  position: absolute;
+  z-index: 999;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#download-form > #download-url {
+  font-family: "Arima", cursive;
+  text-decoration: none;
+  font-weight: 600;
+  color: #3282b8;
+  margin-right: 30px;
+  padding-bottom: 5px;
+  color: #000;
+  font-size: 1.5rem;
+  margin-right: 0;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+#key-input {
+  margin-top: 15px;
+  height: 30px;
+  width: 250px;
+  font-size: 1.2rem;
+  padding-left: 5px;
+  outline: none;
+  border: none;
+  border-radius: 8px;
+}
+
+#copy-btn {
+  font-size: 1.5rem;
+  color: #3282b8;
+  margin-left: 15px;
+  cursor: pointer;
+}
+
+#send-mail-heading {
+  text-align: center;
+  font-size: 2.5rem;
+  letter-spacing: 2px;
+  color: #3282b8;
+  font-family: 'Mochiy Pop One', sans-serif;
+}
+
+#email-label {
+  display: block;
+  text-align: center;
+  margin-top: 40px;
+  font-size: 1.2rem;
+  color: #3282b8;
+  font-weight: 600;
+}
+
+#key-email {
+  height: 30px;
+  width: 300px;
+  outline: none;
+  border-radius: 8px;
+  border: none;
+  margin-top: 10px;
+  padding-left: 5px;
+  font-size: 1.2rem;
+}
+
+#key-send-btn {
+  font-family: "Arima", cursive;
+  text-decoration: none;
+  font-weight: 600;
+  color: #3282b8;
+  margin-right: 30px;
+  padding-bottom: 5px;
+  padding: 8px 15px;
+  border: none;
+  background-color: #e3fdfd;
+  color: #3282b8;
+  font-size: 1rem;
+  display: block;
+  margin: auto;
+  margin-top: 15px;
+  border-radius: 8px;
+}
+
 @-webkit-keyframes slide-right {
   from {
     margin-left: 0;
@@ -409,78 +514,6 @@ body {
   to {
     padding-left: 100vw;
   }
-}
-
-.drag-area {
-  border: 2px dashed #fff;
-  height: 300px;
-  width: 500px;
-  border-radius: 5px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
-.drag-area.active {
-  border: 2px solid #fff;
-}
-
-.drag-area .icon {
-  font-size: 50px;
-  color: #3282b8;
-}
-
-.drag-area header {
-  font-size: 1.6rem;
-  font-weight: 600;
-  color: #fff;
-  color: #3282b8;
-}
-
-.drag-area span {
-  color: #3282b8;
-  font-size: 25px;
-  font-size: 1.6rem;
-  font-weight: 600;
-  margin: 10px 0 15px 0;
-}
-
-.drag-area button {
-  font-family: "Arima", cursive;
-  color: #3282b8;
-  padding: 10px 25px;
-  font-size: 20px;
-  font-weight: 600;
-  border: none;
-  outline: none;
-  background: #fff;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.drag-area button:hover {
-  -webkit-transition: all 0.3s ease-in;
-  transition: all 0.3s ease-in;
-  background: #3282b8;
-  color: #fff;
-}
-
-.drag-area img {
-  height: 100%;
-  width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  border-radius: 5px;
 }
 
 @media only screen and (max-width: 600px) {
