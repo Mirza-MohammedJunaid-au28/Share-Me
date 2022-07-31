@@ -1,6 +1,6 @@
 <nav>
-    <section id="nav-section">
-        <h1 id="nav-heading">File Share</h1>
+    <section id="nav-section" class="dashboard-nav-section">
+        <h1 id="nav-heading">Share Me</h1>
         <div id="nav-btns">
             <span id="name-head">
                 <lord-icon src="https://cdn.lordicon.com/vusrdugn.json" trigger="loop" delay="5000"
@@ -17,8 +17,6 @@
             <form method="post" action="/dashboard" id="upload-file" encType="multipart/form-data">
                 <div id="file-upload-section">
                     <div class="icon"><i class="fas fa-cloud-upload-alt"></i></div>
-                    {{!-- <button>Browse File</button>
-                    <input name="file" type="file"> --}}
                     <input id="btn" type="file" name="file" style="display:none;">
                     <input type="button" id="browse-btn" onclick="document.getElementById('btn').click();" value="Browse File" />
                 </div>
@@ -34,7 +32,7 @@
     </section>
     <div id="download-form" style="display: none;" >
         <span id="close">X</span>
-         <h3 id="heading">Download File</h3>
+         <h3 id="heading" class="download-heading">Download File</h3>
         <a id="download-url" download>Download</a>
     </div>
 </main>

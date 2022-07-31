@@ -1,7 +1,8 @@
 var rand = require("random-key");
-const path = require('path')
+const path = require("path");
 const connection = require("../db/db");
 const nodemailer = require("nodemailer");
+const fs = require("fs");
 
 function fileUpload(req, res) {
   const filename = req.file.filename;
@@ -92,20 +93,47 @@ function downloadfile(req, res) {
     `select * from files where file_id = ? `,
     data,
     (err, result) => {
-      if (!err) {
-        const rest = {
-          filename: result[0].file_name,
-          path : __dirname
-        };
-        return res.status(200).send(rest);
-      } else {
-        const rest = {
-          msg: "File Not Found",
-        };
-        return res.status(401).send(rest);
+      try{
+        if(result.lennght != 0) {
+          const rest = {
+            status : 200,
+            filename: result[0].file_name,
+            path: __dirname,
+          };
+          return res.send(rest);
+        } else {
+          const rest = {
+            status : 404,
+            msg: "File Not Found",
+          };
+          return res.status(401).send(rest);
+        }
+      }
+      catch(err){
+        res.send(err)
       }
     }
   );
 }
 
-module.exports = { fileUpload, sendKey, downloadfile };
+function deletefile(req, res) {
+  const path = `uploads/` + req.body.filepath;
+  console.log("path =>", path);
+
+  try {
+    fs.unlinkSync(path);
+    return res.status(200).send({
+      status : 200,
+      msg : "File successfully deleted"
+    });
+  } catch (err) {
+    console.error(err);
+    return res.status(500).send({
+      status : 500,
+      msg : "Something Went Wrong"
+    });
+  }
+
+}
+
+module.exports = { fileUpload, sendKey, downloadfile, deletefile };

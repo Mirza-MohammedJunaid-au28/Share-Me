@@ -388,6 +388,11 @@ body {
   border: 2px dashed #3282b8;
 }
 
+#file {
+  height: 220px;
+  width: 200px;
+}
+
 .fa-cloud-upload-alt {
   font-size: 5rem;
   color: #3282b8;
@@ -418,6 +423,10 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+
+.download-heading {
+  margin-top: 50px;
 }
 
 #download-form > #download-url {
@@ -517,6 +526,9 @@ body {
 }
 
 @media only screen and (max-width: 600px) {
+  #heading {
+    font-size: 1.5rem;
+  }
   #nav-heading {
     font-size: 1.5rem;
   }
@@ -540,6 +552,57 @@ body {
     -webkit-transition: all 0.2s ease-in;
     transition: all 0.2s ease-in;
     border-bottom: 2px solid #3282b8;
+  }
+  #dashboard-nav-section {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  #name-head {
+    display: none;
+  }
+  #dashboard-main-section {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  #file-upload-section {
+    height: 250px;
+    width: 300px;
+    border: 2px dashed #3282b8;
+  }
+  #dashboard-main-section {
+    gap: 2rem;
+  }
+  #left-section {
+    padding-right: 0;
+    border-right: none;
+  }
+  #right-section {
+    padding-top: 50px;
+    border-top: 2px solid #71c9ce;
+    text-align: center;
+  }
+  #download-link {
+    height: 40px;
+    width: 300px;
+  }
+  #download-btn {
+    margin-right: 0;
+    margin-top: 10px;
+  }
+  #download-form {
+    height: 200px;
+    width: 320px;
+  }
+  #download-url {
+    margin-top: 15px;
+  }
+  #verification {
+    width: 300px;
+    padding: 0 10px;
   }
 }
 /*# sourceMappingURL=style.css.map */

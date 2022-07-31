@@ -8,7 +8,7 @@ const {
 } = require("../controller/signup.controller");
 const { renderLogin, login } = require("../controller/login.controller.js");
 const { renderDashboard } = require("../controller/dashboard.controller");
-const { fileUpload , sendKey , downloadfile } = require("../controller/fileUpload.controller");
+const { fileUpload , sendKey , downloadfile , deletefile } = require("../controller/fileUpload.controller");
 const { isAuth } = require("../middlewear/jwtMiddlewear");
 
 const storage = multer.diskStorage({
@@ -45,6 +45,11 @@ router.get("/dashboard", isAuth, renderDashboard);
 router.post("/dashboard", isAuth, upload.single("file"), fileUpload);
 router.post("/sendKey",isAuth,sendKey);
 router.post("/download",isAuth,downloadfile);
+router.post("/deleteFile",isAuth,deletefile)
+
+router.get("/something", (req,res) =>{
+  res.render("something")
+})
 
 router.get("/logout", (req, res) => {
   res.clearCookie("JWTtoken");
